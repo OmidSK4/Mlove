@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For You, My Love ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(
+          135deg,
+          #0f0f23 0%,
+          #1a0e2e 25%,
+          #2d1b3d 50%,
+          #1a0e2e 75%,
+          #0f0f23 100%
+        );
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        color: #ffffff;
+        font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+            circle at 20% 80%,
+            rgba(255, 77, 109, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 77, 109, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(139, 69, 199, 0.1) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      h1 {
+        margin-top: 60px;
+        font-size: 2.8rem;
+        font-family: "Great Vibes", "Dancing Script", cursive;
+        font-weight: 400;
+        background: linear-gradient(45deg, #ff4d6d, #ff8a95, #ffb3c1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: fadeIn 2s ease-in-out, textShimmer 3s ease-in-out infinite;
+        text-align: center;
+        text-shadow: 0 0 30px rgba(255, 77, 109, 0.5);
+        z-index: 10;
+        position: relative;
+        letter-spacing: 2px;
+      }
+
+      @keyframes textShimmer {
+        0%,
+        100% {
+          filter: brightness(1) drop-shadow(0 0 10px rgba(255, 77, 109, 0.5));
+        }
+        50% {
+          filter: brightness(1.3) drop-shadow(0 0 20px rgba(255, 77, 109, 0.8));
+        }
+      }
+
+      .message {
+        font-size: 0.95rem;
+        font-family: "Dancing Script", "Poppins", sans-serif;
+        font-weight: 500;
+        margin: 8px 0;
+        max-width: 95%;
+        text-align: center;
+        animation: slideFade 1s ease forwards;
+        opacity: 0;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 77, 109, 0.25);
+        border-radius: 15px;
+        padding: 10px 16px;
+        box-shadow: 0 8px 32px rgba(255, 77, 109, 0.15);
+        z-index: 10;
+        position: relative;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+      }
+
+      .dialogue {
+        font-style: italic;
+        font-family: "Dancing Script", cursive;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size: 1.3rem;
+        text-align: center;
+        opacity: 0.9;
+        color: #f2f2f2;
+        transition: opacity 0.5s ease;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(8px);
+        border-radius: 20px;
+        padding: 15px 25px;
+        border: 1px solid rgba(255, 77, 109, 0.15);
+        box-shadow: 0 4px 20px rgba(255, 77, 109, 0.08);
+        z-index: 10;
+        position: relative;
+      }
+
+      .dialogue.fade-out {
+        opacity: 0;
+      }
+
+      @keyframes slideFade {
+        from {
+          transform: translateY(10px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Floating particles for magical effect */
+      .floating-particle {
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 77, 109, 0.8);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 5;
+        animation: floatUp 8s linear infinite;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(100vh) translateX(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-50px) translateX(var(--drift));
+          opacity: 0;
+        }
+      }
+
+      .heart {
+        color: #ff4d6d;
+        font-size: 1.5rem;
+        animation: heartbeat 1.5s infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 5px rgba(255, 77, 109, 0.5));
+        }
+        50% {
+          transform: scale(1.4);
+          filter: drop-shadow(0 0 15px rgba(255, 77, 109, 0.9));
+        }
+      }
+
+      #container {
+        margin-top: 20px;
+        width: 90%;
+        max-width: 600px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        z-index: 10;
+        position: relative;
+      }
+
+      #love-button {
+        background: linear-gradient(45deg, #ff4d6d, #ff8a95);
+        color: white;
+        border: none;
+        padding: 15px 35px;
+        font-size: 1.1rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        border-radius: 999px;
+        cursor: pointer;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+        z-index: 10;
+        position: relative;
+        box-shadow: 0 8px 25px rgba(255, 77, 109, 0.4);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1px;
+      }
+
+      #love-button:hover {
+        background: linear-gradient(45deg, #e6435a, #ff6b7a);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(255, 77, 109, 0.6);
+      }
+
+      .falling-heart {
+        position: fixed;
+        top: -50px;
+        font-size: 2rem;
+        animation: fall linear infinite;
+        pointer-events: none;
+        z-index: 9999;
+        filter: drop-shadow(0 0 8px rgba(255, 77, 109, 0.8));
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(-50px) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(110vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .custom-player {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        animation: fadeIn 1s ease-in-out;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(15px);
+        border-radius: 25px;
+        padding: 25px;
+        border: 1px solid rgba(255, 77, 109, 0.2);
+        box-shadow: 0 10px 40px rgba(255, 77, 109, 0.15);
+        z-index: 10;
+        position: relative;
+      }
+
+      .album-container {
+        position: relative;
+        margin-bottom: 20px;
+      }
+
+      .album-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 77, 109, 0.6) 0%,
+          rgba(255, 77, 109, 0.3) 40%,
+          transparent 70%
+        );
+        filter: blur(10px);
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .custom-player img {
+        width: 180px;
+        height: 180px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(255, 77, 109, 0.4);
+        transition: transform 0.3s ease;
+        z-index: 2;
+        position: relative;
+      }
+
+      .custom-player img.playing + .album-glow {
+        animation: pulseGlow 0.8s ease-in-out infinite alternate;
+      }
+
+      @keyframes pulseGlow {
+        0% {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1.1);
+          opacity: 0.9;
+        }
+      }
+
+      .custom-player .controls button {
+        background: linear-gradient(45deg, #ff4d6d, #ff8a95);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        margin: 0 8px;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      .custom-player .controls button:hover {
+        background: linear-gradient(45deg, #e6435a, #ff6b7a);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 77, 109, 0.6);
+      }
+
+      @media screen and (max-width: 600px) {
+        h1 {
+          font-size: 2.2rem;
+          margin-top: 40px;
+          letter-spacing: 1px;
+        }
+        .message {
+          font-size: 0.85rem;
+          padding: 8px 14px;
+        }
+        .dialogue {
+          font-size: 1.1rem;
+          padding: 12px 20px;
+        }
+        #love-button {
+          font-size: 1rem;
+          padding: 12px 25px;
+        }
+        .custom-player {
+          padding: 20px;
+        }
+        .custom-player img {
+          width: 150px;
+          height: 150px;
+        }
+        .album-glow {
+          width: 170px;
+          height: 170px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To My One and Only ❤️</h1>
+    <button id="love-button">دوستت دارم ❤️</button>
+
+    <div class="custom-player">
+      <div class="album-container">
+        <div class="album-glow"></div>
+        <img id="album-cover" src="Cover.jpg" alt="Album Cover" />
+      </div>
+      <div class="controls">
+        <button id="play-btn">▶️ Play</button>
+        <button id="pause-btn" style="display: none">⏸️ Pause</button>
+      </div>
+    </div>
+
+    <audio id="bg-music" preload="auto">
+      <source
+        src="maher_zain_-_for_the_rest_of_my_life.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <div id="container"></div>
+    <!-- <div id="dialogue" class="dialogue"
+      >"هر ثانیه کنار تو، یک عمر عاشقانه است."</div
+    > -->
+
+    <script>
+      const container = document.getElementById("container");
+      const loveButton = document.getElementById("love-button");
+      const music = document.getElementById("bg-music");
+      const dialogue = document.getElementById("dialogue");
+
+      const customPlayer = document.querySelector(".custom-player");
+      const playBtn = document.getElementById("play-btn");
+      const pauseBtn = document.getElementById("pause-btn");
+      const albumCover = document.getElementById("album-cover");
+      const albumGlow = document.querySelector(".album-glow");
+
+      let i = 1;
+      let intervalId = null;
+      let hasStarted = false;
+
+      const loveTranslations = [
+        { text: "I love you", lang: "English" },
+        { text: "دوستت دارم", lang: "Farsi" },
+        { text: "Te amo", lang: "Spanish" },
+        { text: "Je t'aime", lang: "French" },
+        { text: "Ich liebe dich", lang: "German" },
+        { text: "Ti amo", lang: "Italian" },
+        { text: "愛してる", lang: "Japanese" },
+        { text: "사랑해", lang: "Korean" },
+        { text: "Я тебя люблю", lang: "Russian" },
+        { text: "أنا أحبك", lang: "Arabic" },
+        { text: "Σ' αγαπώ", lang: "Greek" },
+        { text: "Ik hou van jou", lang: "Dutch" },
+        { text: "Jeg elsker dig", lang: "Danish" },
+        { text: "Eu te amo", lang: "Portuguese" },
+        { text: "Mahal kita", lang: "Tagalog" },
+        { text: "আমি তোমায় ভালোবাসি", lang: "Bengali" },
+        { text: "ฉันรักคุณ", lang: "Thai" },
+        { text: "நான் உன்னை காதலிக்கிறேன்", lang: "Tamil" },
+        { text: "मैं तुमसे प्यार करता हूँ", lang: "Hindi" },
+        { text: "Aku cinta padamu", lang: "Indonesian" },
+        { text: "Ngiyakuthanda", lang: "Zulu" },
+        { text: "Ek het jou lief", lang: "Afrikaans" },
+        { text: "Volim te", lang: "Croatian" },
+        { text: "Seni seviyorum", lang: "Turkish" },
+        { text: "Minä rakastan sinua", lang: "Finnish" },
+        { text: "Jag älskar dig", lang: "Swedish" },
+        { text: "Jeg elsker deg", lang: "Norwegian" },
+        { text: "Aš tave myliu", lang: "Lithuanian" },
+        { text: "Te iubesc", lang: "Romanian" },
+        { text: "Wo ai ni", lang: "Mandarin" },
+        { text: "Ngo oi nei", lang: "Cantonese" },
+        { text: "Tôi yêu bạn", lang: "Vietnamese" },
+      ];
+
+      const romanticQuotes = [
+        "تو دلیل لبخند منی بدون اینکه حرفی بزنی.",
+        "با تو بودن یعنی آرامش محض.",
+        "قلبم برای تو می‌تپه و فقط تو.",
+        "عشق یعنی دیدن تو در همه چیز.",
+        "هر شب، قبل از خواب، دلم برایت تنگ می‌شود.",
+        "تو معنی عشق رو برای من ساختی.",
+        "با تو هر لحظه یک خاطره زیباست.",
+        "همه‌ی دنیا رو نمی‌خوام، فقط تو رو می‌خوام.",
+      ];
+
+      function showLove() {
+        const msg = document.createElement("div");
+        msg.className = "message";
+        const love = loveTranslations[i % loveTranslations.length];
+        msg.innerHTML = `#${i} ${love.text} <span class="heart">❤️</span> <small>(${love.lang})</small>`;
+        container.appendChild(msg);
+        container.scrollTop = container.scrollHeight;
+        i++;
+      }
+
+      function startLoveSequence() {
+        if (!intervalId) intervalId = setInterval(showLove, 1500);
+        cycleDialogue();
+      }
+
+      function cycleDialogue() {
+        setInterval(() => {
+          dialogue.classList.add("fade-out");
+          setTimeout(() => {
+            const nextQuote =
+              romanticQuotes[Math.floor(Math.random() * romanticQuotes.length)];
+            dialogue.textContent = `"${nextQuote}"`;
+            dialogue.classList.remove("fade-out");
+          }, 500);
+        }, 7000);
+      }
+
+      loveButton.addEventListener("click", () => {
+        if (!hasStarted) {
+          hasStarted = true;
+          customPlayer.style.display = "flex";
+          music
+            .play()
+            .then(() => {
+              albumCover.classList.add("playing");
+              playBtn.style.display = "none";
+              pauseBtn.style.display = "inline-block";
+            })
+            .catch(() => {
+              alert("موزیک فعال نشد. لطفاً صدا یا دسترسی رو بررسی کن :)");
+            });
+          startLoveSequence();
+          for (let j = 0; j < 20; j++) createFallingHeart();
+        }
+      });
+
+      playBtn.addEventListener("click", () => {
+        music.play().then(() => {
+          albumCover.classList.add("playing");
+          playBtn.style.display = "none";
+          pauseBtn.style.display = "inline-block";
+        }).catch((error) => {
+          console.error("خطا در پخش موزیک:", error);
+          alert("موزیک فعال نشد. لطفاً صدا یا دسترسی رو بررسی کن :)");
+        });
+      });
+
+      pauseBtn.addEventListener("click", () => {
+        music.pause();
+        albumCover.classList.remove("playing");
+        pauseBtn.style.display = "none";
+        playBtn.style.display = "inline-block";
+      });
+
+      function createFallingHeart() {
+        const heart = document.createElement("div");
+        heart.className = "falling-heart";
+        heart.innerText = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 2 + Math.random() * 3 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+      }
+
+      function createFloatingParticles() {
+        for (let i = 0; i < 15; i++) {
+          setTimeout(() => {
+            const particle = document.createElement("div");
+            particle.className = "floating-particle";
+            particle.style.left = Math.random() * 100 + "vw";
+            particle.style.setProperty(
+              "--drift",
+              (Math.random() - 0.5) * 200 + "px"
+            );
+            particle.style.animationDelay = Math.random() * 8 + "s";
+            document.body.appendChild(particle);
+            setTimeout(() => particle.remove(), 8000);
+          }, i * 300);
+        }
+      }
+
+      // Start floating particles automatically
+      setInterval(createFloatingParticles, 12000);
+      createFloatingParticles();
+    </script>
+  </body>
+</html>
