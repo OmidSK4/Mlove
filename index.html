@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Love ❤️</title>
-    <meta http-equiv="refresh" content="0; url=MyLove.html" />
+    <meta http-equiv="refresh" content="0; url=MyLove.html">
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #ff4d6d, #ff8a95);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        color: white;
-        font-family: Arial, sans-serif;
-      }
-      .loading {
-        text-align: center;
-        font-size: 1.5rem;
-      }
-      .heart {
-        animation: pulse 1s infinite;
-      }
-      @keyframes pulse {
-        0%,
-        100% {
-          transform: scale(1);
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff4d6d, #ff8a95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
         }
-        50% {
-          transform: scale(1.2);
+        .loading {
+            text-align: center;
+            font-size: 1.5rem;
         }
-      }
+        .heart {
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="loading">
-      <div class="heart">❤️</div>
-      <p>Loading love...</p>
+        <div class="heart">❤️</div>
+        <p>Loading love...</p>
     </div>
     <script>
-      // Fallback redirect if meta refresh doesn't work
-      setTimeout(() => {
-        window.location.href = "MyLove.html";
-      }, 100);
+        // Fallback redirect if meta refresh doesn't work
+        setTimeout(() => {
+            window.location.href = 'MyLove.html';
+        }, 100);
     </script>
-  </body>
+</body>
 </html>
